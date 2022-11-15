@@ -78,3 +78,8 @@ function domRenderer() {
   mtDate.textContent = month + year;
   cvcNo.textContent = code;
 }
+
+// callBack function for iterating through all strings in the input and spacing them out into 4 chunks of text
+nameNumb[1].addEventListener("input", () => {
+  console.log(nameNumb[1].value);
+});
