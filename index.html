@@ -44,6 +44,7 @@
               placeholder="e.g. Jane Appleseed"
               class="nameNumb"
               autofocus
+              maxlength="23"
             />
             <p class="errorMsg"></p>
           </div>
@@ -54,6 +55,7 @@
               type="text"
               placeholder="e.g. 1234 5678 9123 0000"
               class="nameNumb"
+              maxlength="19"
             />
             <p class="errorMsg"></p>
           </div>
@@ -61,13 +63,28 @@
           <div class="section dateCVC">
             <div class="dateSect">
               <h4>Exp. Date (MM/YY)</h4>
-              <input type="text" placeholder="MM" class="number" />
-              <input type="text" placeholder="YY" class="number" />
+              <input
+                type="text"
+                placeholder="MM"
+                class="number"
+                maxlength="2"
+              />
+              <input
+                type="text"
+                placeholder="YY"
+                class="number"
+                maxlength="2"
+              />
               <p class="errorMsg"></p>
             </div>
             <div class="cvc">
               <h4>CVC</h4>
-              <input type="text" placeholder=" e.g. 123" class="cvc" />
+              <input
+                type="text"
+                placeholder=" e.g. 123"
+                class="cvc"
+                maxlength="3"
+              />
               <p class="errorMsg"></p>
             </div>
           </div>

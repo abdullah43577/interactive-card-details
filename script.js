@@ -6,9 +6,9 @@ const btn = document.querySelector("button");
 const formHandler = document.querySelector("form");
 const cardNumber = document.querySelector("figcaption > h3");
 const cardName = document.querySelector(".details > :first-child");
-const mtDate = document.querySelector("mtDate");
+const mtDate = document.querySelector(".mtDate");
 const errorMsg = document.querySelectorAll(".errorMsg");
-const cvcNo = document.querySelector("cvcNo");
+const cvcNo = document.querySelector(".cvcNo");
 
 // prevents the form from submitting / refreshing each time I click the button
 formHandler.addEventListener("submit", (e) => {
@@ -23,17 +23,19 @@ let code;
 
 btn.addEventListener("click", () => {
   cardHolderName = nameNumb[0].value;
-  cardNumbervalue = nameNumb[1].value;
+  cardNumbervalue = nameNumb[1].value.toUpperCase();
   month = number[0].value;
   year = number[1].value;
   code = cvc.value;
+  console.log(cvc.value);
 
-  // console.log(cardHolderName.split(/\da{4}/g, "4"));
-
+  // if ((cardHolderName, cardNumbervalue, month, year, code)) {}
   isPureString(cardHolderName, 0);
   isPureNumber(cardNumbervalue, 1);
   isPureNumber2(month, 2);
-  isPureNumber2(year, 3);
+  isPureNumber2(year, 2);
+  // isPureNumber(code, 3);
+  renderCardDetails();
 });
 
 function isPureString(parameter, index) {
@@ -72,14 +74,19 @@ function showErrorMessage(index) {
   }, 3000);
 }
 
-function domRenderer() {
+function renderCardDetails() {
   cardNumber.textContent = cardNumbervalue;
   cardName.textContent = cardHolderName;
-  mtDate.textContent = month + year;
+  mtDate.textContent = `${month}/${year}`;
   cvcNo.textContent = code;
 }
 
 // callBack function for iterating through all strings in the input and spacing them out into 4 chunks of text
 nameNumb[1].addEventListener("input", () => {
-  console.log(nameNumb[1].value);
+  const test1 = nameNumb[1].value.split("");
+  console.log(test1);
+
+  // make a research to see the kinds of arguments the join method supports maybe we could specify where to add spaces in the join argument and then update the input.value in real time.
+  const test2 = test1.splice("").join("");
+  console.log(test2);
 });
