@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+    <link rel="stylesheet" href="styles.css" type="text/css" />
+    <title>Frontend Mentor | Interactive card details form</title>
+  </head>
+  <body>
+    <main>
+      <section class="leftSection">
+        <div class="imageBG">
+          <figcaption class="first">
+            <img src="./images/bg-card-front.png" alt="background card front" />
+            <img src="./images/card-logo.svg" alt="card logo" />
+
+            <!-- rendered content -->
+            <h3>0000 0000 0000 0000</h3>
+            <div class="details">
+              <p>Jane Appleseed</p>
+              <p class="mtDate">00/00</p>
+            </div>
+          </figcaption>
+
+          <figcaption class="second">
+            <img src="./images/bg-card-back.png" alt="background card back" />
+            <p class="cvcNo">000</p>
+          </figcaption>
+        </div>
+      </section>
+      <section class="rightSection">
+        <form>
+          <div class="section">
+            <h4>Cardholder Name</h4>
+            <input
+              type="text"
+              placeholder="e.g. Jane Appleseed"
+              class="nameNumb"
+            />
+            <p class="errorMsg"></p>
+          </div>
+
+          <div class="section">
+            <h4>Card Number</h4>
+            <input
+              type="text"
+              placeholder="e.g. 1234 5678 9123 0000"
+              class="nameNumb"
+            />
+            <p class="errorMsg"></p>
+          </div>
+
+          <div class="section dateCVC">
+            <div class="dateSect">
+              <h4>Exp. Date (MM/YY)</h4>
+              <input type="text" placeholder="MM" class="number" />
+              <input type="text" placeholder="YY" class="number" />
+              <p class="errorMsg"></p>
+            </div>
+            <div class="cvc">
+              <h4>CVC</h4>
+              <input type="text" placeholder=" e.g. 123" class="cvc" />
+              <p class="errorMsg"></p>
+            </div>
+          </div>
+
+          <button>Confirm</button>
+        </form>
+      </section>
+    </main>
+    <footer>
+      <div class="attribution">
+        Challenge by
+        <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
+          >Frontend Mentor</a
+        >. Coded by <a href="#" target="_blank">Abdullah Ayoola</a>.
+      </div>
+    </footer>
+    <script src="script.js"></script>
+  </body>
+</html>

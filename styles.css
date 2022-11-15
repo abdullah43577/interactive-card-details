@@ -1,0 +1,172 @@
+@import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500&display=swap");
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+  width: 100%;
+  background-color: #f3f3f3;
+  font-family: "Space Grotesk", sans-serif;
+}
+
+main {
+  height: 100%;
+  width: 100%;
+  display: flex;
+}
+
+main > .leftSection {
+  width: 30%;
+  background-image: url("./images/bg-main-desktop.png");
+  background-position: center;
+  background-size: cover;
+}
+
+.imageBG {
+  position: absolute;
+  top: 10vh;
+  left: 10vw;
+}
+
+figcaption {
+  width: 370px;
+  position: relative;
+  color: #f3f3f3;
+}
+
+figcaption.second {
+  margin-left: 50px;
+  margin-top: 30px;
+  position: relative;
+}
+
+.second > p {
+  position: absolute;
+  bottom: 98px;
+  right: 48px;
+}
+
+figcaption > img {
+  width: 100%;
+}
+
+img[src="./images/card-logo.svg"] {
+  position: absolute;
+  width: 50px;
+  left: 20px;
+  top: 20px;
+}
+
+.first > h3,
+.details {
+  position: absolute;
+  bottom: 60px;
+}
+
+.first > h3 {
+  left: 20px;
+  font-weight: lighter;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.details {
+  display: flex;
+  justify-content: space-between;
+  bottom: 20px;
+  width: 100%;
+  padding: 0 20px;
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+main > .rightSection {
+  width: 70%;
+}
+
+.rightSection {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+h4 {
+  text-transform: uppercase;
+  margin-bottom: 10px;
+  font-weight: lighter;
+  letter-spacing: 2px;
+}
+
+.section {
+  margin-top: 20px;
+}
+
+.dateCVC {
+  display: flex;
+}
+
+.dateSect {
+  margin-right: 20px;
+}
+
+input {
+  padding-inline-start: 10px;
+  border-radius: 10px;
+  border: none;
+  outline: none;
+  height: 35px;
+  font-family: "Space Grotesk", sans-serif;
+}
+
+input:focus {
+  border-image: linear-gradient(hsl(249, 99%, 64%), hsl(278, 94%, 30%)) 2;
+  border-style: solid;
+  border-width: 1px;
+}
+
+input::placeholder {
+  color: hsl(270, 3%, 87%);
+}
+
+.nameNumb {
+  width: 400px;
+}
+
+.number {
+  width: 100px;
+}
+
+.cvc {
+  width: 180px;
+}
+
+button {
+  padding: 10px 0px;
+  width: 400px;
+  color: white;
+  background-color: hsl(278, 68%, 11%);
+  border-radius: 10px;
+  margin-top: 30px;
+  cursor: pointer;
+  border: none;
+}
+
+/* footer section */
+footer {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  font-size: 14px;
+}
+
+.errormessage {
+  color: red;
+  font-size: 12px;
+  padding-top: 5px;
+}
