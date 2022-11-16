@@ -46,8 +46,8 @@ function isPureString(parameter, index) {
 }
 
 function isPureNumber(parameter, index) {
-  // if the parameter matches anything other than a number or decimal
-  if (parameter.match(/\D+/)) {
+  // if the parameter matches any letter from a - z
+  if (parameter.match(/[a-zA-Z]/g)) {
     errorMsg[index].textContent = `Wrong format, number only`;
     showErrorMessage(index);
   } else {
@@ -56,8 +56,8 @@ function isPureNumber(parameter, index) {
 }
 
 function isPureNumber2(parameter, index) {
-  // if the parameter matches anything other than a number or decimal
-  if (parameter.match(/\D+/)) {
+  // if the parameter matches any letter from a - z
+  if (parameter.match(/[a-zA-Z]/g)) {
     errorMsg[index].textContent = `Can't be blank`;
     showErrorMessage(index);
   }
