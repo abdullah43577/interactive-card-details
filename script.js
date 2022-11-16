@@ -8,7 +8,8 @@ const cardNumber = document.querySelector("figcaption > h3");
 const cardName = document.querySelector(".details > :first-child");
 const mtDate = document.querySelector(".mtDate");
 const errorMsg = document.querySelectorAll(".errorMsg");
-const cvcNo = document.querySelector(".cvcNo");
+const cvcCard = document.querySelector(".cvcNo");
+console.log(cvcCard);
 
 // prevents the form from submitting / refreshing each time I click the button
 formHandler.addEventListener("submit", (e) => {
@@ -78,7 +79,7 @@ function renderCardDetails() {
   cardNumber.textContent = cardNumbervalue;
   cardName.textContent = cardHolderName;
   mtDate.textContent = `${month}/${year}`;
-  cvcNo.textContent = code;
+  cvcCard.textContent = code;
 }
 
 // callBack function for iterating through all strings in the input and spacing them out into 4 chunks of text
