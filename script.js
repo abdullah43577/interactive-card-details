@@ -8,8 +8,7 @@ const cardNumber = document.querySelector("figcaption > h3");
 const cardName = document.querySelector(".details > :first-child");
 const mtDate = document.querySelector(".mtDate");
 const errorMsg = document.querySelectorAll(".errorMsg");
-const cvcCard = document.querySelector(".cvcNo");
-console.log(cvcCard);
+const cvcCard = document.querySelector(".cvcCard");
 
 // prevents the form from submitting / refreshing each time I click the button
 formHandler.addEventListener("submit", (e) => {
@@ -35,12 +34,13 @@ btn.addEventListener("click", () => {
   isPureNumber(cardNumbervalue, 1);
   isPureNumber2(month, 2);
   isPureNumber2(year, 2);
-  // isPureNumber(code, 3);
+  isPureNumber(code, 3);
   renderCardDetails();
 });
 
 function isPureString(parameter, index) {
-  if (!parameter.match(/[a-zA-Z]/g)) {
+  // checks if the parameter doesn't match any string from a-z or if it matches any number from 0 - 9
+  if (!parameter.match(/[a-zA-Z]/g) || parameter.match(/\d/g)) {
     errorMsg[index].textContent = `Wrong format, text only`;
     showErrorMessage(index);
   }
