@@ -37,60 +37,81 @@
       </section>
       <section class="rightSection">
         <form>
-          <div class="section">
-            <h4>Cardholder Name</h4>
-            <input
-              type="text"
-              placeholder="e.g. Jane Appleseed"
-              class="nameNumb"
-              autofocus
-              maxlength="23"
-            />
-            <p class="errorMsg"></p>
-          </div>
-
-          <div class="section">
-            <h4>Card Number</h4>
-            <input
-              type="text"
-              placeholder="e.g. 1234 5678 9123 0000"
-              class="nameNumb"
-              maxlength="19"
-            />
-            <p class="errorMsg"></p>
-          </div>
-
-          <div class="section dateCVC">
-            <div class="dateSect">
-              <h4>Exp. Date (MM/YY)</h4>
+          <div class="box">
+            <div class="section">
+              <h4>Cardholder Name</h4>
               <input
                 type="text"
-                placeholder="MM"
-                class="number"
-                maxlength="2"
-              />
-              <input
-                type="text"
-                placeholder="YY"
-                class="number"
-                maxlength="2"
+                placeholder="e.g. Jane Appleseed"
+                class="nameNumb"
+                autofocus
+                maxlength="23"
               />
               <p class="errorMsg"></p>
             </div>
-            <div class="cvcContainer">
-              <h4>CVC</h4>
+
+            <div class="section">
+              <h4>Card Number</h4>
               <input
                 type="text"
-                placeholder=" e.g. 123"
-                class="cvc"
-                maxlength="3"
+                placeholder="e.g. 1234 5678 9123 0000"
+                class="nameNumb"
+                maxlength="19"
               />
               <p class="errorMsg"></p>
             </div>
+
+            <div class="section dateCVC">
+              <div class="dateSect">
+                <h4>Exp. Date (MM/YY)</h4>
+                <input
+                  type="text"
+                  placeholder="MM"
+                  class="number"
+                  maxlength="2"
+                />
+                <input
+                  type="text"
+                  placeholder="YY"
+                  class="number"
+                  maxlength="2"
+                />
+                <p class="errorMsg"></p>
+              </div>
+              <div class="cvcContainer">
+                <h4>CVC</h4>
+                <input
+                  type="text"
+                  placeholder=" e.g. 123"
+                  class="cvc"
+                  maxlength="3"
+                />
+                <p class="errorMsg"></p>
+              </div>
+            </div>
+
+            <button>Confirm</button>
           </div>
 
-          <button>Confirm</button>
+          <!-- hidden section to be rendered after the button is clicked -->
+          <div class="hiddenContainer hidden">
+            <figcaption id="iconComplete">
+              <img src="./images/icon-complete.svg" alt="icon complete" />
+            </figcaption>
+            <h2>Thank you!</h2>
+            <p>We've added your card details</p>
+            <button>Continue</button>
+          </div>
         </form>
+
+        <!-- <div class="hiddenContainer">
+          <figcaption id="iconComplete">
+            <img src="./images/icon-complete.svg" alt="icon complete" />
+          </figcaption>
+          <h2>Thank you!</h2>
+          <p>We've added your card details</p>
+          <button>Continue</button>
+        </div> -->
       </section>
     </main>
     <footer>

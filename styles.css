@@ -46,8 +46,9 @@ figcaption.second {
 
 .second > p {
   position: absolute;
-  bottom: 98px;
+  bottom: 92px;
   right: 48px;
+  letter-spacing: 2px;
 }
 
 figcaption > img {
@@ -155,6 +156,7 @@ button {
   margin-top: 30px;
   cursor: pointer;
   border: none;
+  height: 40px;
 }
 
 /* footer section */
@@ -169,4 +171,161 @@ footer {
   color: red;
   font-size: 12px;
   padding-top: 5px;
+}
+
+#iconComplete {
+  width: 100px;
+}
+
+#iconComplete > img {
+  width: 100%;
+}
+
+.hiddenContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.hiddenContainer > h2 {
+  text-transform: uppercase;
+}
+
+.hiddenContainer > p {
+  color: hsl(279, 6%, 55%);
+}
+
+:is(.hiddenContainer) h2,
+p {
+  padding: 5px 0;
+  font-weight: lighter;
+}
+
+.hidden {
+  display: none;
+}
+
+@media (min-width: 920px) and (max-width: 1024px) {
+  figcaption {
+    width: 280px;
+  }
+
+  .second > p {
+    bottom: 72px;
+  }
+}
+
+@media (max-width: 920px) and (orientation: portrait) {
+  figcaption {
+    width: 300px;
+  }
+
+  .second > p {
+    bottom: 80px;
+  }
+}
+
+@media (max-width: 850px) and (orientation: portrait) {
+  main {
+    flex-direction: column;
+  }
+
+  main > .leftSection {
+    height: 30%;
+    width: auto;
+  }
+
+  figcaption {
+    width: 250px;
+  }
+
+  .first > h3 {
+    font-size: 15px;
+    bottom: 50px;
+  }
+
+  .details > :first-child {
+    font-size: 12px;
+  }
+
+  .mtDate {
+    font-size: 10px;
+  }
+
+  .second > p {
+    top: 58px;
+    right: 35px;
+    font-size: 14px;
+  }
+
+  figcaption.second {
+    bottom: 200px;
+  }
+
+  figcaption.first {
+    top: 50px;
+    z-index: 1;
+  }
+
+  main > .rightSection {
+    /* height: 70%; */
+    width: 100%;
+  }
+
+  .section {
+    width: 340px;
+  }
+
+  .nameNumb {
+    width: 300px;
+  }
+
+  button {
+    width: 320px;
+    height: 50px;
+  }
+
+  h4 {
+    font-size: 14px;
+  }
+
+  .number {
+    width: 80px;
+  }
+
+  .cvcContainer > input {
+    width: 115px;
+  }
+
+  main > .leftSection {
+    background-image: url("./images/bg-main-mobile.png");
+  }
+}
+
+@media (max-width: 380px) and (orientation: portrait) {
+  /* section.rightSection {
+    margin-top: 100px;
+  } */
+
+  figcaption {
+    width: 220px;
+  }
+
+  figcaption.first {
+    top: 25px;
+  }
+
+  .first > h3 {
+    font-size: 10px;
+  }
+
+  .details > :first-child {
+    font-size: 10px;
+  }
+
+  .second > p {
+    font-size: 10px;
+    top: 53px;
+  }
 }

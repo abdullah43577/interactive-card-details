@@ -36,6 +36,9 @@ btn.addEventListener("click", () => {
   isPureNumber2(year, 2);
   isPureNumber(code, 3);
   renderCardDetails();
+
+  document.querySelector(".box").classList.add("hidden");
+  document.querySelector(".hiddenContainer").classList.remove("hidden");
 });
 
 function isPureString(parameter, index) {
