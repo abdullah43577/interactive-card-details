@@ -59,6 +59,9 @@ button.addEventListener("click", () => {
   // This takes in the variable where the values where stored, the errormessage[index], and the inputs[index], and the errorMessage to be displayed
   isPureNumber(chNumberValue, 1, 1, `Wrong format, numbers only`);
   isPureNumber(monthValue, 2, 2, `Can't be blank`);
+
+  formatInput(chNumberValue, cardHolderNumber);
+
   isPureNumber(yearValue, 2, 3, `Can't be blank`);
   isPureNumber(cvcValue, 3, 4, `Can't be blank`);
 });
@@ -91,13 +94,15 @@ function renderCardDetails() {
     creditNumber.textContent = chNumberValue;
     mtDate.textContent = `${monthValue}/${yearValue}`;
     cvcCard.textContent = cvcValue;
+
+    document.querySelector(".box").classList.add("hidden");
+    document.querySelector(".hiddenContainer").classList.remove("hidden");
   }
 }
 
-inputs[1].addEventListener("input", () => {
-  console.log(inputs[1].value);
-  if (inputs[1].value.length === 4) {
-    const test = inputs[1].value.replaceAll(/(?:\d{4} ){3}\d{4}/g);
-    console.log(test);
+function formatInput(variable, input) {
+  if (variable) {
+    let test = variable.match(/.{1,4}/g);
+    input.value = test.join(" ");
   }
-});
+}
