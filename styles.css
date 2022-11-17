@@ -301,6 +301,10 @@ p {
   main > .leftSection {
     background-image: url("./images/bg-main-mobile.png");
   }
+
+  footer {
+    left: 20px;
+  }
 }
 
 @media (max-width: 380px) and (orientation: portrait) {
