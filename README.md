@@ -31,7 +31,7 @@ Users should be able to:
 ### Screenshot
 
 ![Screenshot 1](<./design/Screenshot%20(1).png>)
-![Screenshot 2](<./design/Screenshot%20(2).png>)
+![Screenshot 2](./design/Screenshot_45.png)
 ![Screenshot 3](<./design/Screenshot%20(3).png>)
 ![Screenshot 4](<./design/Screenshot%20(4).png>)
 
@@ -57,31 +57,25 @@ Some of the codes which I'm proud of are listed below:
 ```js
 function isPureString(parameter, index) {
   // checks if the parameter doesn't match any string from a-z or if it matches any number from 0 - 9
-  if (!parameter.match(/[a-zA-Z]/g) || parameter.match(/\d/g)) {
-    errorMsg[index].textContent = `Wrong format, text only`;
-    showErrorMessage(index);
-  }
-}
-
-function isPureNumber(parameter, index) {
-  // if the parameter matches any letter from a - z
-  if (parameter.match(/[a-zA-Z]/g) || parameter === "") {
-    errorMsg[index].textContent = `Wrong format, number only`;
-    showErrorMessage(index);
-  } else {
-    console.log("this is correct");
-  }
-}
-
-function showErrorMessage(index) {
-  errorMsg[index].classList.add("errormessage");
-  nameNumb[index].style.border = "1px solid red";
+function showErrorMessage(index, displayErrorMessage, input) {
+  errorMessages[index].textContent = `${displayErrorMessage}`;
+  errorMessages[index].classList.add("errormessage");
+  inputs[input].style.border = "1px solid red";
 
   setTimeout(() => {
-    errorMsg[index].textContent = "";
-    errorMsg[index].classList.remove("errormessage");
-    nameNumb[index].style.border = "none";
+    errorMessages[index].textContent = "";
+    errorMessages[index].classList.remove("errormessage");
+    inputs[input].style.border = "none";
   }, 3000);
+}
+
+function isPureNumber(parameter, index, input, errormsg) {
+  if (parameter.match(/\d/g) && !parameter.match(/[a-zA-Z]/g)) {
+    console.log("This is correct");
+    renderCardDetails();
+  } else {
+    showErrorMessage(index, errormsg, input);
+  }
 }
 ```
 
