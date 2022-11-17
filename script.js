@@ -1,96 +1,103 @@
 "use strict";
-const nameNumb = document.querySelectorAll(".nameNumb");
-const number = document.querySelectorAll(".number");
+const formAction = document.querySelector("form");
+const cardHolderName = document.querySelector(".cardHolderName");
+const cardHolderNumber = document.querySelector(".cardHolderNumber");
+const month = document.querySelector(".month");
+const year = document.querySelector(".year");
 const cvc = document.querySelector(".cvc");
-const btn = document.querySelector("button");
-const formHandler = document.querySelector("form");
-const cardNumber = document.querySelector("figcaption > h3");
+const button = document.querySelector("button");
+const errorMessages = document.querySelectorAll(".errorMsg");
+const inputs = document.querySelectorAll("input");
 const cardName = document.querySelector(".details > :first-child");
 const mtDate = document.querySelector(".mtDate");
-const errorMsg = document.querySelectorAll(".errorMsg");
-const cvcCard = document.querySelector(".cvcCard");
+const creditNumber = document.querySelector("figcaption > h3");
+const cvcCard = document.querySelector(".second > p");
 
-// prevents the form from submitting / refreshing each time I click the button
-formHandler.addEventListener("submit", (e) => {
+console.log(
+  cardHolderName,
+  cardHolderNumber,
+  month,
+  year,
+  cvc,
+  button,
+  errorMessages,
+  inputs,
+  cardName,
+  mtDate,
+  creditNumber,
+  cvcCard
+);
+
+formAction.addEventListener("submit", (e) => {
   e.preventDefault();
 });
 
-let cardHolderName;
-let cardNumbervalue;
-let month;
-let year;
-let code;
+let chNameValue;
+let chNumberValue;
+let monthValue;
+let yearValue;
+let cvcValue;
 
-btn.addEventListener("click", () => {
-  cardHolderName = nameNumb[0].value;
-  cardNumbervalue = nameNumb[1].value.toUpperCase();
-  month = number[0].value;
-  year = number[1].value;
-  code = cvc.value;
-  console.log(cvc.value);
+button.addEventListener("click", () => {
+  // storing values of the inputs into variables
+  chNameValue = cardHolderName.value.toUpperCase();
+  chNumberValue = cardHolderNumber.value;
+  monthValue = month.value;
+  yearValue = year.value;
+  cvcValue = cvc.value;
 
-  // if ((cardHolderName, cardNumbervalue, month, year, code)) {}
-  isPureString(cardHolderName, 0);
-  isPureNumber(cardNumbervalue, 1);
-  isPureNumber2(month, 2);
-  isPureNumber2(year, 2);
-  isPureNumber(code, 3);
-  renderCardDetails();
+  if (
+    // checks if the parameter matches any string from a-z and doesn't match any string from 0-9
+    chNameValue.match(/[a-zA-Z]/g) &&
+    !chNameValue.match(/\d/g)
+  ) {
+    console.log("This is correct");
+  } else {
+    showErrorMessage(0, `Wrong format, texts only`, 0);
+  }
 
-  document.querySelector(".box").classList.add("hidden");
-  document.querySelector(".hiddenContainer").classList.remove("hidden");
+  // This takes in the variable where the values where stored, the errormessage[index], and the inputs[index], and the errorMessage to be displayed
+  isPureNumber(chNumberValue, 1, 1, `Wrong format, numbers only`);
+  isPureNumber(monthValue, 2, 2, `Can't be blank`);
+  isPureNumber(yearValue, 2, 3, `Can't be blank`);
+  isPureNumber(cvcValue, 3, 4, `Can't be blank`);
 });
 
-function isPureString(parameter, index) {
-  // checks if the parameter doesn't match any string from a-z or if it matches any number from 0 - 9
-  if (!parameter.match(/[a-zA-Z]/g) || parameter.match(/\d/g)) {
-    errorMsg[index].textContent = `Wrong format, text only`;
-    showErrorMessage(index);
-  }
-}
-
-function isPureNumber(parameter, index) {
-  // if the parameter matches any letter from a - z
-  if (parameter.match(/[a-zA-Z]/g) || parameter === "") {
-    errorMsg[index].textContent = `Wrong format, number only`;
-    showErrorMessage(index);
-  } else {
-    console.log("this is correct");
-  }
-}
-
-function isPureNumber2(parameter, index) {
-  // if the parameter matches any letter from a - z
-  if (parameter.match(/[a-zA-Z]/g) || parameter === "") {
-    errorMsg[index].textContent = `Can't be blank`;
-    showErrorMessage(index);
-  }
-}
-
-function showErrorMessage(index) {
-  errorMsg[index].classList.add("errormessage");
-  nameNumb[index].style.border = "1px solid red";
+function showErrorMessage(index, displayErrorMessage, input) {
+  errorMessages[index].textContent = `${displayErrorMessage}`;
+  errorMessages[index].classList.add("errormessage");
+  inputs[input].style.border = "1px solid red";
 
   setTimeout(() => {
-    errorMsg[index].textContent = "";
-    errorMsg[index].classList.remove("errormessage");
-    nameNumb[index].style.border = "none";
+    errorMessages[index].textContent = "";
+    errorMessages[index].classList.remove("errormessage");
+    inputs[input].style.border = "none";
   }, 3000);
 }
 
-function renderCardDetails() {
-  cardNumber.textContent = cardNumbervalue;
-  cardName.textContent = cardHolderName;
-  mtDate.textContent = `${month}/${year}`;
-  cvcCard.textContent = code;
+// This takes in the variable where the values where stored, the errormessage[index], and the inputs[index], and the errorMessage to be displayed
+function isPureNumber(parameter, index, input, errormsg) {
+  if (parameter.match(/\d/g) && !parameter.match(/[a-zA-Z]/g)) {
+    console.log("This is correct");
+    renderCardDetails();
+  } else {
+    showErrorMessage(index, errormsg, input);
+  }
 }
 
-// callBack function for iterating through all strings in the input and spacing them out into 4 chunks of text
-nameNumb[1].addEventListener("input", () => {
-  const test1 = nameNumb[1].value.split("");
-  console.log(test1);
+function renderCardDetails() {
+  if ((chNameValue, chNumberValue, monthValue, yearValue, cvcValue)) {
+    cardName.textContent = chNameValue;
+    creditNumber.textContent = chNumberValue;
+    mtDate.textContent = `${monthValue}/${yearValue}`;
+    cvcCard.textContent = cvcValue;
+  }
+}
 
-  // make a research to see the kinds of arguments the join method supports maybe we could specify where to add spaces in the join argument and then update the input.value in real time.
-  const test2 = test1.splice("").join("");
-  console.log(test2);
+inputs[1].addEventListener("input", () => {
+  console.log(inputs[1].value);
+  if (inputs[1].value.length === 4) {
+    const test = inputs[1].value.replaceAll(/(?:\d{4} ){3}\d{4}/g);
+    console.log(test);
+  }
 });

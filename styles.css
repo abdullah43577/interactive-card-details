@@ -136,17 +136,15 @@ input::placeholder {
   color: hsl(270, 3%, 87%);
 }
 
-.nameNumb {
+.cardHolderName,
+.cardHolderNumber {
   width: 400px;
 }
 
-.number {
+.month,
+.year {
   width: 100px;
 }
-
-/* .cvc {
-  width: 180px;
-} */
 
 button {
   padding: 10px 0px;
@@ -213,7 +211,11 @@ p {
   }
 
   .second > p {
-    bottom: 72px;
+    bottom: 68px;
+  }
+
+  .details > p {
+    font-size: 12px;
   }
 }
 
@@ -278,7 +280,8 @@ p {
     width: 340px;
   }
 
-  .nameNumb {
+  .cardHolderName,
+  .cardHolderNumber {
     width: 300px;
   }
 
@@ -291,7 +294,8 @@ p {
     font-size: 14px;
   }
 
-  .number {
+  .month,
+  .year {
     width: 80px;
   }
 
