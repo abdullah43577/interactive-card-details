@@ -11,6 +11,7 @@ body {
   width: 100%;
   background-color: #f3f3f3;
   font-family: "Space Grotesk", sans-serif;
+  position: relative;
 }
 
 main {
@@ -304,10 +305,6 @@ p {
 
   footer {
     left: 20px;
-  }
-
-  .box {
-    margin: 50px 0;
   }
 }
 
