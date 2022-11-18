@@ -13,21 +13,6 @@ const mtDate = document.querySelector(".mtDate");
 const creditNumber = document.querySelector("figcaption > h3");
 const cvcCard = document.querySelector(".second > p");
 
-console.log(
-  cardHolderName,
-  cardHolderNumber,
-  month,
-  year,
-  cvc,
-  button,
-  errorMessages,
-  inputs,
-  cardName,
-  mtDate,
-  creditNumber,
-  cvcCard
-);
-
 formAction.addEventListener("submit", (e) => {
   e.preventDefault();
 });
