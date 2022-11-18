@@ -59,9 +59,6 @@ button.addEventListener("click", () => {
   // This takes in the variable where the values where stored, the errormessage[index], and the inputs[index], and the errorMessage to be displayed
   isPureNumber(chNumberValue, 1, 1, `Wrong format, numbers only`);
   isPureNumber(monthValue, 2, 2, `Can't be blank`);
-
-  formatInput(chNumberValue, cardHolderNumber);
-
   isPureNumber(yearValue, 2, 3, `Can't be blank`);
   isPureNumber(cvcValue, 3, 4, `Can't be blank`);
 });
@@ -100,9 +97,26 @@ function renderCardDetails() {
   }
 }
 
-function formatInput(variable, input) {
-  if (variable) {
-    let test = variable.match(/.{1,4}/g);
-    input.value = test.join(" ");
+inputs[1].addEventListener("keydown", () => {
+  console.log(inputs[1].value);
+  const formattedInputField = formatInputField(inputs[1].value);
+  inputs[1].value = formattedInputField;
+  console.log(inputs[1].value.length);
+});
+
+function formatInputField(value) {
+  if (!value) return value;
+  const InputValidator = value.replace(/[^\d]/g, "");
+  const InputValidatorlength = InputValidator.length;
+  if (InputValidatorlength < 4) return InputValidator;
+  if (InputValidatorlength < 7) {
+    return `${InputValidator.slice(0, 4)} ${InputValidator.slice(4)}`;
   }
+  return `${InputValidator.slice(0, 4)} ${InputValidator.slice(
+    4,
+    8
+  )} ${InputValidator.slice(8, 12)} ${InputValidator.slice(
+    12,
+    16
+  )} ${InputValidator.slice(16, 19)}`;
 }
