@@ -31,6 +31,7 @@ main > .leftSection {
   position: absolute;
   top: 10vh;
   left: 10vw;
+  height: 0;
 }
 
 figcaption {
@@ -74,6 +75,7 @@ img[src="./images/card-logo.svg"] {
   font-weight: lighter;
   text-transform: uppercase;
   letter-spacing: 2px;
+  font-size: 30px;
 }
 
 .details {
@@ -244,7 +246,7 @@ p {
   }
 
   .first > h3 {
-    font-size: 15px;
+    font-size: 18px;
     bottom: 50px;
   }
 
@@ -257,7 +259,7 @@ p {
   }
 
   .second > p {
-    top: 58px;
+    top: 55px;
     right: 35px;
     font-size: 14px;
   }
@@ -326,7 +328,7 @@ p {
   }
 
   .first > h3 {
-    font-size: 10px;
+    font-size: 15px;
   }
 
   .details > :first-child {
@@ -335,6 +337,6 @@ p {
 
   .second > p {
     font-size: 10px;
-    top: 53px;
+    top: 50px;
   }
 }

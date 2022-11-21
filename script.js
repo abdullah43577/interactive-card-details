@@ -71,6 +71,7 @@ function isPureNumber(parameter, index, input, errormsg) {
 }
 
 function renderCardDetails() {
+  // check for if the input is valid before assigining them to the card
   if ((chNameValue, chNumberValue, monthValue, yearValue, cvcValue)) {
     cardName.textContent = chNameValue;
     creditNumber.textContent = chNumberValue;
@@ -82,26 +83,15 @@ function renderCardDetails() {
   }
 }
 
-inputs[1].addEventListener("keydown", () => {
-  console.log(inputs[1].value);
-  const formattedInputField = formatInputField(inputs[1].value);
-  inputs[1].value = formattedInputField;
-  console.log(inputs[1].value.length);
-});
-
-function formatInputField(value) {
+const formatInput = (value) => {
   if (!value) return value;
-  const InputValidator = value.replace(/[^\d]/g, "");
-  const InputValidatorlength = InputValidator.length;
-  if (InputValidatorlength < 4) return InputValidator;
-  if (InputValidatorlength < 7) {
-    return `${InputValidator.slice(0, 4)} ${InputValidator.slice(4)}`;
-  }
-  return `${InputValidator.slice(0, 4)} ${InputValidator.slice(
-    4,
-    8
-  )} ${InputValidator.slice(8, 12)} ${InputValidator.slice(
-    12,
-    16
-  )} ${InputValidator.slice(16, 19)}`;
-}
+  return `${value.slice(0, 4)} ${value.slice(4, 8)} ${value.slice(
+    8,
+    12
+  )} ${value.slice(12, 16)}`;
+};
+
+inputs[1].addEventListener("change", () => {
+  const formattedInputField = formatInput(inputs[1].value);
+  inputs[1].value = formattedInputField;
+});
