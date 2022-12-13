@@ -126,10 +126,11 @@ input {
   outline: none;
   height: 35px;
   font-family: "Space Grotesk", sans-serif;
+  font-size: 16px;
 }
 
 input:focus {
-  border-image: linear-gradient(hsl(249, 99%, 64%), hsl(278, 94%, 30%)) 2;
+  border-image: linear-gradient(hsl(249, 99%, 64%), hsl(278, 94%, 30%));
   border-style: solid;
   border-width: 1px;
 }
